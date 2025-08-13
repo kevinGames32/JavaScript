@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rock Paper Scissors <em>Game</em></h1>
+    <div class="container">
+        <button class="item" onclick="
+        var [result, computerMove] = gameCall('Rock');
+        alert(`you picked Rock, computer picked ${computerMove}. ${result}`);
+        G">Rock</button>
+    <button class="item"  onclick="
+        var [result, computerMove] = gameCall('Paper');
+        alert(`you picked Paper,computer picked ${computerMove}. ${result}`);
+        G">Paper</button>
+    <button class="item" onclick="
+        var [result, computerMove] = gameCall('Scissors');
+        alert(`you picked Scissors, computer picked ${computerMove}. ${result}`);
+        G">Scissors</button>
+    </div>
+    
+    <script>
+       let gameCall = (userMove) =>{
+        const RandomNum = Math.random();
+        var result = '';
+        let computerMove = '';
+        if (RandomNum >= 0 && RandomNum <= 1/3 ){
+            computerMove = 'Rock';
+        } else if (RandomNum >= 1/3 && RandomNum <2/3) {
+            computerMove = 'Paper';
+        } else if(RandomNum >2/3 && RandomNum < 1){
+            computerMove = 'Scissors';
+        }
+        if(computerMove === userMove){
+            result = 'Tie!';
+        } else if(computerMove==='Rock' && userMove==='Scissors'){
+            result = 'you loose';
+        } else if (computerMove === 'Paper' && userMove === 'Rock'){
+            result = 'You loose';
+        } else if(computerMove === 'Scissors' && userMove === 'Paper'){
+            result = 'You loose';
+        } else{
+            result = 'You Win!';
+        }
+        return [result, computerMove];}
+    </script>
+    <link href="style.css" rel="stylesheet"></link>
+</body>
+</html>

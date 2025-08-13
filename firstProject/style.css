@@ -1,0 +1,21 @@
+button {
+    color: white;
+    background-color: black;
+    justify-items: center;
+    padding: 10px;
+    
+}
+
+.container{
+
+    flex-direction: column;
+}
+.item{
+    width: 100px;
+    border-radius: 24px;
+    
+}
+
+*{
+    text-align: center;
+}
