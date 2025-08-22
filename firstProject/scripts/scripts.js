@@ -17,7 +17,27 @@ function resetScore(){
         document.querySelector(".js-scissors").classList.remove('Selected')
         
 }
+let isAutoplaying = false;
+let intervalId;
 
+//add autoplay functionality 
+function autoPlay(){
+    //check if it was autoplaying
+    if(!isAutoplaying){
+
+        //run playgame with computer move as player move parameter and repeat over 1 sec
+        intervalId=setInterval(function(){
+        let playerMove = getComputerMove();
+        playGame(playerMove);
+    }, 1000);
+    //set autoplay var to true for next time the button is pressed
+    isAutoplaying = true;}else{
+
+        //stop autoplay
+        isAutoplaying = false;
+        clearInterval(intervalId);
+    }
+}
 
 function playGame(playerMove){
     let computerMove = getComputerMove();
@@ -55,6 +75,7 @@ function playGame(playerMove){
             score.wins+=1;
         }
     }
+
     function selectButton(){
         if(playerMove === 'Rock'){
             document.querySelector(".js-rock").classList.add('Selected')
@@ -95,6 +116,7 @@ function getComputerMove(){
 
     return computerMove;
 }
+
 function updateResult(){
     const parragraphElement = document.querySelector('.js-showResult');
     parragraphElement.innerHTML = `Current score: Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
