@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: Arial;
+    
+    
+}
+.tittle{
+    justify-self: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.move-icon{
+
+    height: 50px;
+}
+.move-button{
+    background-color: transparent;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.move-button-div{
+    justify-self: center;
+}
+.move-button:hover{
+    transform: scale(1.1);
+
+}
+p{
+    justify-self: center;
+}
+.result{
+    font-size: 25px;
+    font-weight: bold;
+}
+.showMoves{
+    font-size: 25px;
+}
+.reset, .autoplay{
+    margin-right: 10px;
+    background-color: white;
+    border: none;
+    font-size: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.reset:hover, .autoplay:hover{
+    transform: scale(1.1);
+    background-color: aqua;
+}
+.winLose{
+    font-size: 30px;
+    font-weight: bold;
+}
+.Selected{
+    background-color: grey;
+    opacity: 30%;
+}
+.button-section{
+    display: flex;
+    justify-content: center;
+}
+
