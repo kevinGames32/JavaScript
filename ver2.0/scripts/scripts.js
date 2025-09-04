@@ -18,14 +18,44 @@ function resetScore(){
         
 }
 
-document.querySelector('.js-reset').addEventListener('click', ()=>{
-    resetScore();
+//functions to make sure user wants to confirm the reset of their score
+function hideResetConfirmation(){
+    document.querySelector('.js-reset-confirmation')
+    .innerHTML = ''
+}
+function resetConfirmation(){
+    document.querySelector('.js-reset-confirmation')
+    .innerHTML = 
+    `Are you Sure you want to reset your score?
+     <button class="js-reset-confirm">yes</button>
+     <button class ='js-reset-cancel'>No</button>`;
+
+     document.querySelector('.js-reset-confirm')
+     .addEventListener('click', ()=>{
+        resetScore();
+        hideResetConfirmation();
+     })
+     document.querySelector('.js-reset-cancel')
+     .addEventListener('click', ()=>{
+        hideResetConfirmation();
+     })
+
+}
+
+
+document.querySelector('.js-reset').addEventListener('click', ()=>{  
+    resetConfirmation();                  
 })
 let isAutoplaying = false;
 let intervalId;
 
 //add autoplay functionality 
 
+document.body.addEventListener('keydown',(event)=>{
+    if(event.key == 'a'){
+        autoPlay();
+    }
+})
 
 function autoPlay(){
     //check if it was autoplaying
@@ -54,6 +84,17 @@ document.querySelector('.js-rock').addEventListener('click',()=>{playGame('Rock'
 document.querySelector('.js-paper').addEventListener('click',()=>{playGame('Paper');})
 document.querySelector('.js-scissors').addEventListener('click',()=>{playGame('Scissors');})
 
+
+//play game iwth keyboard
+document.body.addEventListener('keydown', (event)=>{
+    if(event.key == 'r'){
+        playGame('Rock');
+    } else if(event.key == 'p'){
+        playGame('Paper');
+    } else if(event.key =='s'){
+        playGame('Scissors');
+    }
+})
 function playGame(playerMove){
     let computerMove = getComputerMove();
     let result = '';

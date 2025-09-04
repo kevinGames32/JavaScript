@@ -5,6 +5,13 @@ body {
     
     
 }
+
+.keydown{
+    font-weight: bold;
+    font-size: 10px;
+    padding-top: 40px;
+    
+}
 .tittle{
     justify-self: center;
     font-size: 30px;
@@ -34,6 +41,36 @@ body {
 p{
     justify-self: center;
 }
+.js-reset-confirmation{
+    align-self: center;
+    justify-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(0, 0, 0);
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.js-reset-confirm, .js-reset-cancel{
+    border: none;
+    width: 50px;
+    height: 20px;
+    justify-content: center;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    
+}
+.js-reset-confirm:hover, .js-reset-cancel:hover{
+    transform: scale(1.1);
+}
+.js-reset-confirm:hover{
+    background-color: green;
+}
+.js-reset-cancel:hover{
+    background-color: darkred;
+}
 .result{
     font-size: 25px;
     font-weight: bold;
@@ -49,7 +86,7 @@ p{
     padding: 8px 15px;
     cursor: pointer;
     margin-top: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
 .reset:hover, .autoplay:hover{
